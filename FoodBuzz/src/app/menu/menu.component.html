@@ -1,0 +1,46 @@
+<br><br><br><br>
+<input id="myInput" type="text" class="form-control" placeholder="Enter Menu Item Name">
+<table *ngIf="arrBirds" id="dtBasicExample" class="col-sm-6 col-md-6 table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="th-sm">Restaurant name     
+      </th>
+      <th class="th-sm">Restaurant Address   
+        </th> 
+        <th class="th-sm">Restaurant Phone No     
+          </th>
+           <th class="th-sm">Item Name     
+            </th>
+      <th class="th-sm">Item image     
+      </th>
+      <th class="th-sm">Item Price  
+      </th>
+      <th class="th-sm">Item Category
+      </th>
+      
+      <th class="th-sm">Quantity
+        </th>
+      <th class="th-sm">Check To Cart
+      </th>
+        
+    </tr>
+  </thead>
+  <tbody id="myTable">
+    <tr *ngFor="let bird of arrBirds; let i=index">
+      <td>{{bird.res_name}}</td> 
+        <td>{{bird.res_address}}</td>
+        <td>{{bird.res_mobile_no}}</td>
+        <td>{{bird.item_name}}</td>
+        <td><img class="w3-image" alt="Hamburger Catering" width="200" height="100"></td>
+  
+        <td>{{bird.item_price}}</td>
+        <td>{{bird.item_category}}</td>
+      <td><button (click)="count1(i)">+</button>&nbsp;{{bird.item_count}}  <button (click)="count2(i)">-</button>  
+      <td><input (click)="select(i)" type="checkbox" name="select"></td>
+    </tr>
+  </tbody>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="selected()" class="btn" style="margin-left: 361%;width: 102px;">Button</button>
+
+</table>
+
